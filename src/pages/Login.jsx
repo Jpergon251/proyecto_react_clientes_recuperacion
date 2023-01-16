@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import Swal from 'sweetalert2'
 import { useUserContext } from '../contexts/UserContext'
 
@@ -32,25 +32,8 @@ const Login = () => {
       setError('Escribe una contraseña de 6 o mas carácteres')
       return
     }
-    if (esregistro) {
-      registrar()
-    } else {
-      login()
-    }
-  }
-
-  const registrar = async () => {
-    console.log('Registrando...')
-    Swal.fire({
-      title: 'Éxito',
-      text: 'Usuario registrado',
-      icon: 'success',
-    })
-    setUsers([...users, datos])
-    setDatos(datosInitialState)
-    setError(null)
-    setUser(true)
-    navigate('/dashboard')
+    login()
+    
   }
 
   const login = async () => {
@@ -71,7 +54,7 @@ const Login = () => {
 
   return (
     <div className='mt-5'>
-      <h3 className='text-center'>{esregistro ? 'Registro' : 'Login'}</h3>
+      <h3 className='text-center'>Login</h3>
       <hr />
       <div className='row justify-content-center'>
         <div className='col-12 col-sm-8 col-md-6 col-xl-4'>
@@ -94,14 +77,16 @@ const Login = () => {
               value={datos.pass}
             />
             <button className='btn btn-lg btn-dark w-100  mb-2' type='submit'>
-              {esregistro ? 'Registrar' : 'Login'}
+              Login
             </button>
+            <Link to='/registro'>
             <button
               className='btn btn-sm btn-info w-100  mb-2'
               onClick={() => setEsregistro(!esregistro)}
               type='button'>
-              {esregistro ? '¿Ya tienes cuenta?' : '¿No tienes cuenta?'}
+              ¿No tienes cuenta?
             </button>
+            </Link>
           </form>
         </div>
       </div>

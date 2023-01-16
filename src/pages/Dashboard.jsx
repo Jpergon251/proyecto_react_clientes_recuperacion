@@ -71,13 +71,17 @@ const Dashboard = () => {
 							placeholder='Buscar nombre de pokemon'
 						/>
 					</div>
-
 					<button className='btn-search'>Buscar</button>
 				</form>
+       		</div>
+      	</div>
+      	<PokemonList/>
+	  	<FilterBar/>
+	  	<div className="container-btn-load-more container">
+                <button className='btn-load-more' onClick={onClickLoadMore}>
+                    Cargar más
+                </button>
         </div>
-      </div>
-      <PokemonList/>
-	  <FilterBar/>
     </>
   )
 }

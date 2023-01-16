@@ -8,18 +8,31 @@ const SearchPage = () => {
 
 	const { globalPokemons } = useContext(PokemonContext);
 
-	const filteredPokemons = globalPokemons.filter(pokemon =>
-		pokemon.name.includes(location.state.toLowerCase())
-	);
+	
+  
 
+  const filterPokemons = () => {
+    if (!isNaN(parseInt(location.state))){
+      
+      const filteredPokemons = globalPokemons.filter(pokemon =>
+        pokemon.id === parseInt(location.state))
+
+      return filteredPokemons
+    }else {
+      const filteredPokemons = globalPokemons.filter(pokemon =>
+          pokemon.name.includes(location.state.toLowerCase())
+        );
+      return filteredPokemons  
+    }
+  }
 	return (
 		<div className='container'>
 			<p className='p-search'>
-				Se encontraron <span>{filteredPokemons.length}</span>{' '}
+				Se encontraron <span>{filterPokemons().length}</span>{' '}
 				resultados:
 			</p>
 			<div className='card-list-pokemon container'>
-				{filteredPokemons.map(pokemon => (
+				{filterPokemons().map(pokemon => (
 					<CardPokemon pokemon={pokemon} key={pokemon.id} />
 				))}
 			</div>

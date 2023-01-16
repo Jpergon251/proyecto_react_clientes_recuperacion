@@ -8,6 +8,7 @@ import LayoutPrivate from '../layouts/LayoutPrivate'
 import PokemonPage from '../pages/PokemonPage'
 import Perfil from '../pages/Perfil'
 import SearchPage from '../pages/SearchPage'
+import Registro from '../pages/Registro'
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/registro',
+        element: <Registro />,
       },
       {
         path: '/pokemon/:id',
