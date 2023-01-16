@@ -37,20 +37,17 @@ const Registro = () => {
 
 
     const registrar = async () => {
-        console.log('Registrando...')
-        Swal.fire({
-          title: 'Éxito',
-          text: 'Usuario registrado',
-          icon: 'success',
-        })
-        setUsers([...users, datos])
-        setDatos(datosInitialState)
-        setError(null)
-        setUser(true)
-        navigate('/dashboard')
-        let usuarios = []
-        usuarios.concat(localStorage.setItem('user',JSON.stringify(datos)))
-        console.log(JSON.parse(localStorage.getItem('user')))
+      console.log('Registrando...')
+      Swal.fire({
+      title: 'Éxito',
+      text: 'Usuario registrado',
+      icon: 'success',
+      })
+      setUsers([...users, datos])
+      setDatos(datosInitialState)
+      setError(null)
+      setUser(true)
+      navigate('/dashboard')
       }
 
       const handleChange = (e) => {

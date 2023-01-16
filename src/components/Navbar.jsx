@@ -6,9 +6,6 @@ import { useUserContext } from '../contexts/UserContext'
 const Navbar = () => {
   const { user, setUser } = useUserContext()
 
-  const {numero} = useContext(PokemonContext)
-  console.log(numero)
-
   const navigate = useNavigate()
 
   const cerrarSesion = () => {

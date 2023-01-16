@@ -1,8 +1,19 @@
 import React from 'react'
 
+
 const Perfil = () => {
+
+  const datos = localStorage.getItem('users')
+
+  console.log(datos)
+
   return (
-    <div>Tu perfil</div>
+    <>
+    <div>
+    Tus favoritos
+
+    </div>
+    </>
   )
 }
 

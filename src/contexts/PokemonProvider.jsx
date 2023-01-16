@@ -7,6 +7,8 @@ const PokemonProvider = ({children}) => {
     const [allPokemons, setAllPokemons] = useState([]);
 	const [globalPokemons, setGlobalPokemons] = useState([]);
 	const [offset, setOffset] = useState(0);
+	
+
 
 	// Utilizar CustomHook - useForm
 	const { valueSearch, onInputChange, onResetForm } = useForm({
