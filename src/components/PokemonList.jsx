@@ -6,10 +6,10 @@ import ReactPaginate from 'react-paginate'
 
 const PokemonList = () => {
   
-  const { globalPokemons, loading, filteredPokemons } =
+  const { allPokemons, loading, filteredPokemons } =
 		useContext(PokemonContext);
 
-
+	
 	return (
 		<>
 			{loading ? (
@@ -24,7 +24,7 @@ const PokemonList = () => {
 						</>
 					) : (
 						<>
-							{globalPokemons.map(pokemon => (
+							{allPokemons.map(pokemon => (
 								<CardPokemon pokemon={pokemon} key={pokemon.id} />
 							))}
 						</>

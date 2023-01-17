@@ -7,8 +7,6 @@ const PokemonProvider = ({children}) => {
     const [allPokemons, setAllPokemons] = useState([]);
 	const [globalPokemons, setGlobalPokemons] = useState([]);
 	const [offset, setOffset] = useState(0);
-	
-
 
 	// Utilizar CustomHook - useForm
 	const { valueSearch, onInputChange, onResetForm } = useForm({
@@ -78,8 +76,12 @@ const PokemonProvider = ({children}) => {
 
 	// BTN CARGAR MÁS
 	const onClickLoadMore = () => {
+
 		setOffset(offset + 50);
 	};
+	const onClickLoadLess = () => {
+		setOffset(offset - 50);
+	}
 
 	// Filter Function + State
 	const [typeSelected, setTypeSelected] = useState({

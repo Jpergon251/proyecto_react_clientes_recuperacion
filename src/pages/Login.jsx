@@ -60,6 +60,13 @@ const Login = () => {
     })
   }
 
+  const muestraDatos = () =>{
+    Swal.fire({
+      title: `Email: ${localStorage.getItem('email')} y contraseña: ${localStorage.getItem('pass')}`,
+      timer: 2000
+    })
+    
+  }
   return (
     <div className='mt-5'>
       <h3 className='text-center'>Login</h3>
@@ -95,7 +102,12 @@ const Login = () => {
               ¿No tienes cuenta?
             </button>
             </Link>
-            
+            <button
+              onClick={muestraDatos}
+              className='btn btn-sm w-100 mb-2'
+              type='button'>
+              ¿Olvidaste tus datos?
+            </button>
           </form>
         </div>
       </div>

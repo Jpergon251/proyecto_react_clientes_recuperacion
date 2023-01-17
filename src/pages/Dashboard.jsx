@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import FilterBar from '../components/FilterBar'
 import PokemonList from '../components/PokemonList'
@@ -7,7 +7,7 @@ import ReactPaginate from 'react-paginate';
 
 const Dashboard = () => {
 
-	const { onInputChange, valueSearch, onResetForm } =
+	const { onInputChange, valueSearch, onResetForm ,globalPokemons} =
 		useContext(PokemonContext);
 
 	const navigate = useNavigate();
@@ -17,10 +17,15 @@ const Dashboard = () => {
 		navigate('/search', {
 			state: valueSearch,
 		});
-
 		onResetForm();
 	};
 
+	const prevPage = () =>{
+		console.log('prev')
+	}
+	const nextPage = () =>{
+		console.log('next')
+	}
 	const {onClickLoadMore, active, setActive} = useContext(PokemonContext)
 
   return (
@@ -44,8 +49,10 @@ const Dashboard = () => {
 					<span>Filtrar</span>
 				</div>
 			</div>
+		
       <div className='container-filter container'>
         <div className="icon-filter">
+		
         <form onSubmit={onSearchSubmit}>
 			
 					<div className='form-group'>
@@ -71,13 +78,19 @@ const Dashboard = () => {
 							onChange={onInputChange}
 							placeholder='Buscar nombre de pokemon'
 						/>
-					</div>
-					<button className='btn-search'>Buscar</button>
-				</form>
-       		</div>
-      	</div>
-      	<PokemonList/>
-	  	<FilterBar/>
+					</div>	
+				<button className='btn-search m-2'>Buscar</button>
+			</form>
+		</div>
+	</div>
+	<PokemonList/>
+	
+	<FilterBar/>
+	<div className="container-btn-load-more container"><button className='btn btn-search text-center m-2' onClick={onClickLoadMore}>
+			Cargar mas
+	</button>
+	</div>
+	
     </>
   )
 }
