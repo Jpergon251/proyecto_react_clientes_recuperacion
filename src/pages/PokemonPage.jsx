@@ -25,6 +25,27 @@ const PokemonPage = () => {
 		fetchPokemon(id);
 	}, []);
 
+
+	const [active, setActive] = useState(false)
+	
+
+	const onClickActive = ()=>{
+		if (active){
+			localStorage.removeItem(`pokemon${pokemon.id}`)
+			//favoritos.slice(favoritos.indexOf(pokemon), 1)
+			//let filtrados = favoritos.filter((elemento) => elemento.id != pokemon.id);
+			//setFavoritos(filtrados);
+			//favoritos.splice(favoritos.indexOf(pokemon), favoritos.indexOf(pokemon))
+			return setActive(false);
+		} else {
+			localStorage.setItem(`pokemon${pokemon.id}`, JSON.stringify(pokemon))
+			// resultado = favoritos.push(pokemon)
+			// setFavoritos(favoritos.push(pokemon))
+			return setActive(true)
+		}
+		
+	}
+
 	return (
 		<main className='container main-pokemon'>
 			{loading ? (
@@ -33,6 +54,7 @@ const PokemonPage = () => {
 				<>
 					<div className='header-main-pokemon'>
 						<span className='number-pokemon'>#{pokemon.id}</span>
+						
 						<div className='container-img-pokemon'>
 							<img
 								src={pokemon.sprites.other.dream_world.front_default}
@@ -61,8 +83,13 @@ const PokemonPage = () => {
 							</div>
 						</div>
 					</div>
-
+					
 					<div className='container-stats'>
+						<div>
+						<button className={`btn btn-sm h-25 mt-4 ${active ? 'btn btn-warning' : 'btn btn-dark'}`} onClick={onClickActive}>
+						{`${active ? 'Añadido a favoritos' : 'Añadir a favoritos'}`}
+						</button>
+						</div>
 						<h1>Estadísticas</h1>
 						<div className='stats'>
 							<div className='stat-group'>
@@ -108,6 +135,7 @@ const PokemonPage = () => {
 								</span>
 							</div>
 						</div>
+						
 					</div>
 				</>
 			)}

@@ -25,7 +25,7 @@ const Dashboard = () => {
   return (
     <>
 	<div className='container-filter container'>
-				<div className='icon-filter' >
+				<div className='icon-filter' onClick={() => setActive(!active)}>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						fill='none'
