@@ -22,6 +22,14 @@ const Perfil = () => {
   return (
 
     <>
+    <div className="top-container">
+			
+			<img src="https://i.imgur.com/aZkuP0D.gif" className="img-fluid profile-image" width="150"/>
+			
+			<div className="ml-3">
+				<p className="mail">Email: {localStorage.getItem('email')}</p>
+			</div>
+		</div>
 		<div className='container'>
 			<p className='p-search'>
 				Tienes <span>{favoritePokemons().length}</span>{' '}
