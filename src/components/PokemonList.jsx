@@ -2,11 +2,13 @@ import React, { useContext, useState } from 'react'
 import PokemonContext from '../contexts/PokemonContext'
 import CardPokemon from './CardPokemon'
 import '../index.css'
+import ReactPaginate from 'react-paginate'
 
 const PokemonList = () => {
   
-  const { allPokemons, loading, filteredPokemons } =
+  const { globalPokemons, loading, filteredPokemons } =
 		useContext(PokemonContext);
+
 
 	return (
 		<>
@@ -22,7 +24,7 @@ const PokemonList = () => {
 						</>
 					) : (
 						<>
-							{allPokemons.map(pokemon => (
+							{globalPokemons.map(pokemon => (
 								<CardPokemon pokemon={pokemon} key={pokemon.id} />
 							))}
 						</>
@@ -32,5 +34,4 @@ const PokemonList = () => {
 		</>
 	);
 }
-
 export default PokemonList

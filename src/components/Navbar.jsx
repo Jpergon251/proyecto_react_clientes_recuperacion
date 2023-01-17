@@ -12,6 +12,7 @@ const Navbar = () => {
     console.log('cerrando...')
     navigate('/login')
     setUser(null)
+    
   }
 
   return (
@@ -36,7 +37,7 @@ const Navbar = () => {
               Perfil
             </Link>
           )}
-            <NavLink className='btn btn-dark  mr-2' to='/contact'>
+            <NavLink className='btn btn-dark mr-2' to='/contact'>
               Contacto
             </NavLink>
           {user ? (
@@ -44,7 +45,7 @@ const Navbar = () => {
               Cerrar sesión
             </button>
           ) : (
-            <NavLink className='btn btn-dark  mr-2' to='/login'>
+            <NavLink className='btn btn-dark mr-2' to='/login'>
               Login
             </NavLink>
           )}

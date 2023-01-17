@@ -9,10 +9,8 @@ const Login = () => {
     pass: '',
   }
   const { user, setUser } = useUserContext()
-  const [users, setUsers] = useState([])
   const [datos, setDatos] = useState(datosInitialState)
   const [error, setError] = useState(null)
-  const [esregistro, setEsregistro] = useState(false)
 
   const navigate = useNavigate()
 
@@ -32,13 +30,23 @@ const Login = () => {
       setError('Escribe una contraseña de 6 o mas carácteres')
       return
     }
-    login()
+    if(email === localStorage.getItem('email') && pass === localStorage.getItem('pass')){
+      login()
+    }else{
+      setError('Datos incorrectos')
+    }
+    
     
   }
 
   const login = async () => {
     console.log('Logueando...')
     // Validamos el user
+    Swal.fire({
+      title: 'Éxito',
+      text: 'Usuario logueado',
+      icon: 'success',
+      })
     setUser(true)
     setDatos(datosInitialState)
     setError(null)
@@ -64,7 +72,7 @@ const Login = () => {
               name='email'
               type='email'
               className='form-control mb-2'
-              placeholder='Introduce el email'
+              placeholder='Email'
               onChange={(e) => handleChange(e)}
               value={datos.email}
             />
@@ -72,21 +80,22 @@ const Login = () => {
               name='pass'
               type='password'
               className='form-control mb-2'
-              placeholder='Introduce el password'
+              placeholder='Pasword'
               onChange={(e) => handleChange(e)}
               value={datos.pass}
             />
-            <button className='btn btn-lg btn-dark w-100  mb-2' type='submit'>
-              Login
-            </button>
+            <div class="text-center pt-1">
+              <button class="btn btn-primary gradient-custom-2 mb-3" type="submit">Log
+                in</button>
+            </div>
             <Link to='/registro'>
             <button
-              className='btn btn-sm btn-info w-100  mb-2'
-              onClick={() => setEsregistro(!esregistro)}
+              className='btn btn-sm w-100 mb-2'
               type='button'>
               ¿No tienes cuenta?
             </button>
             </Link>
+            
           </form>
         </div>
       </div>

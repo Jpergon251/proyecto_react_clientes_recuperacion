@@ -29,23 +29,18 @@ const PokemonPage = () => {
 	const [active, setActive] = useState(false)
 	
 
+	
 	const onClickActive = ()=>{
 		if (active){
 			localStorage.removeItem(`pokemon${pokemon.id}`)
-			//favoritos.slice(favoritos.indexOf(pokemon), 1)
-			//let filtrados = favoritos.filter((elemento) => elemento.id != pokemon.id);
-			//setFavoritos(filtrados);
-			//favoritos.splice(favoritos.indexOf(pokemon), favoritos.indexOf(pokemon))
 			return setActive(false);
 		} else {
 			localStorage.setItem(`pokemon${pokemon.id}`, JSON.stringify(pokemon))
-			// resultado = favoritos.push(pokemon)
-			// setFavoritos(favoritos.push(pokemon))
 			return setActive(true)
 		}
 		
 	}
-
+	
 	return (
 		<main className='container main-pokemon'>
 			{loading ? (

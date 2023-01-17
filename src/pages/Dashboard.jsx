@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import FilterBar from '../components/FilterBar'
 import PokemonList from '../components/PokemonList'
 import PokemonContext from '../contexts/PokemonContext'
+import ReactPaginate from 'react-paginate';
 
 const Dashboard = () => {
 
@@ -77,11 +78,6 @@ const Dashboard = () => {
       	</div>
       	<PokemonList/>
 	  	<FilterBar/>
-	  	<div className="container-btn-load-more container">
-                <button className='btn-load-more' onClick={onClickLoadMore}>
-                    Cargar más
-                </button>
-        </div>
     </>
   )
 }

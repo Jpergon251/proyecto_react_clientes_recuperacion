@@ -8,9 +8,6 @@ const SearchPage = () => {
 
 	const { globalPokemons } = useContext(PokemonContext);
 
-	
-  
-
   const filterPokemons = () => {
     if (!isNaN(parseInt(location.state))){
       
