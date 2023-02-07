@@ -7,7 +7,8 @@ const CardPokemon = ({ pokemon }) => {
 	
 	return (
 		<>
-		<Link to={`/pokemon/${pokemon.id}`} className={`card-pokemon`}>
+		
+		<Link to={`/pokemon/${pokemon.id}`} className={`card-pokemon animating`}>
 			<div className='card-img'>
 				<img
 					src={pokemon.sprites.other.dream_world.front_default}

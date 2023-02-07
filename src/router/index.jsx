@@ -9,6 +9,7 @@ import PokemonPage from '../pages/PokemonPage'
 import Perfil from '../pages/Perfil'
 import SearchPage from '../pages/SearchPage'
 import Registro from '../pages/Registro'
+import Inicio from '../pages/Inicio'
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ export const router = createBrowserRouter([
       {
         path: '/search',
         element: <SearchPage />,
+      },
+      {
+        path: '/inicio',
+        element: <Inicio />,
       },
       {
         path: '/dashboard',

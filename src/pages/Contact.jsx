@@ -2,59 +2,30 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="well well-sm">
-                <form class="form-horizontal" method="post">
-                    <fieldset>
-                        <legend class="text-center header">Contact us</legend>
-
-                        <div class="form-group mb-2">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="fname" name="name" type="text" placeholder="First Name" class="form-control"></input>
-                            </div>
-                        </div>
-                        <div class="form-group mb-2">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-user bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="lname" name="name" type="text" placeholder="Last Name" class="form-control"></input>
-                            </div>
-                        </div>
-
-                        <div class="form-group mb-2">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-envelope-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="email" name="email" type="text" placeholder="Email Address" class="form-control"></input>
-                            </div>
-                        </div>
-
-                        <div class="form-group mb-2">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-phone-square bigicon"></i></span>
-                            <div class="col-md-8">
-                                <input id="phone" name="phone" type="text" placeholder="Phone" class="form-control"></input>
-                            </div>
-                        </div>
-
-                        <div class="form-group mb-2">
-                            <span class="col-md-1 col-md-offset-2 text-center"><i class="fa fa-pencil-square-o bigicon"></i></span>
-                            <div class="col-md-8">
-                                <textarea class="form-control" id="message" name="message" placeholder="Enter your massage for us here. We will get back to you within 2 business days." rows="7"></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-group mb-2">
-                            <div class="col-md-12 text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">Submit</button>
-                            </div>
-                        </div>
-                    </fieldset>
+    <>
+    <body>
+    
+    <main>
+            <section class="section pag-contacto">
+                
+                <form class="form-contacto">
+                    <h2>Contactanos</h2>
+                    <input type="text" name="nombre" id="nombre" placeholder="Nombre"/>
+                    <input type="email" name="email" id="email" placeholder="Email"/>
+                    <input type="tel" name="telefono" id="telefono" placeholder="Teléfono"/>
+                    <button type="submit">Enviar</button>
                 </form>
-            </div>
-        </div>
-    </div>
-</div>
+                <img src="/src/assets/images/pokemon_help.png" alt="support"/>
+                
+            </section>
+        </main>
+    <footer class="footer">
+        <a title="Inicio"><img src="/src/assets/images/pokemon_company.png"/>
+            © 2022 Pokémon | Esta página ha sido creada por José Antonio Pérez González 
+        </a>
+    </footer>
+    </body>
+    </>
   )
 }
 

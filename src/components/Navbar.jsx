@@ -16,42 +16,26 @@ const Navbar = () => {
   }
 
   return (
-    <div className='navbar navbar-dark bg-dark mt-5'>
-      <Link to='/' className='logo'>
-					<img
-						src='https://archives.bulbagarden.net/media/upload/4/4b/Pok%C3%A9dex_logo.png'
-						alt='Logo Pokedex'
-					/>
-			</Link>
-      
-      
-      <div>
-        <div className='d-flex'>
-          {user && (
-            <NavLink to='/dashboard' className='btn btn-dark  mr-2'>
-              Lista de Pokemons
-            </NavLink>
-          )}
-          {user && (
-            <Link to='/perfil' className='btn btn-dark mr-2'>
-              Perfil
-            </Link>
-          )}
-            <NavLink className='btn btn-dark mr-2' to='/contact'>
-              Contacto
-            </NavLink>
-          {user ? (
-            <button className='btn btn-dark' onClick={() => cerrarSesion()}>
-              Cerrar sesión
-            </button>
-          ) : (
-            <NavLink className='btn btn-dark mr-2' to='/login'>
-              Login
-            </NavLink>
-          )}
-        </div>
-      </div>
-    </div>
+    <>
+    <header>
+      <Link to='/inicio'>
+        <a class="logo" id="logo1"><img src="/src/assets/images/logo.png" alt="logo"/></a>
+      </Link>
+    
+      <Link to='/inicio' className='logo'>
+        <a class="logo" id="logo2"><img src="/src/assets/images/logo2.png" alt="logo2"/></a>
+      </Link>
+      {user ? (
+        <Link to='/perfil'>
+        <a class="logo" id="logo3">Perfil<img src="/src/assets/images/pokedex.png" alt="logo3"/></a>
+        </Link>
+      ) : (
+        <Link to='/registro'>
+          <a class="logo" id="logo3">Registro<img src="/src/assets/images/pokedex.png" alt="logo3"/></a>
+        </Link>
+      )}
+    </header>
+    </>
   )
 }
 
