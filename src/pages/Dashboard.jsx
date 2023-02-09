@@ -20,12 +20,6 @@ const Dashboard = () => {
 		onResetForm();
 	};
 
-	const prevPage = () =>{
-		console.log('prev')
-	}
-	const nextPage = () =>{
-		console.log('next')
-	}
 	const {onClickLoadMore, active, setActive} = useContext(PokemonContext)
 
   return (

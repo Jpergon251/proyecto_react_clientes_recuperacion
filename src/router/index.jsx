@@ -42,7 +42,7 @@ export const router = createBrowserRouter([
         element: <SearchPage />,
       },
       {
-        path: '/inicio',
+        path: '/',
         element: <Inicio />,
       },
       {

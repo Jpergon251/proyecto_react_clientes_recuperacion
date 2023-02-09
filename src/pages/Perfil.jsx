@@ -22,13 +22,14 @@ const Perfil = () => {
   return (
 
     <>
-    <div className="top-container">
-			
-			<img src="https://i.imgur.com/aZkuP0D.gif" className="img-fluid profile-image" width="150"/>
-			
+    	<div className="top-container">
 			<div className="ml-3">
-				<p className="mail">Email: {localStorage.getItem('email')}</p>
+				<h3 className="Nombre">Nombre: {localStorage.getItem('user')}</h3>
 			</div>
+
+			<img src="https://i.imgur.com/aZkuP0D.gif" className="img-fluid profile-image" width="300"/>
+			
+			
 		</div>
 		<div className='container'>
 			<p className='p-search'>

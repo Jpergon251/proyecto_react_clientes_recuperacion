@@ -6,7 +6,6 @@ const LayoutPublic = () => {
   return (
     <div className='container'>
         <Navbar/>
-        <h1 className='text-center'>Bienvenido a la pokedex</h1>
         <Outlet/>
     </div>
   )

@@ -6,9 +6,10 @@ import Swal from 'sweetalert2'
 const Registro = () => {
 
     const datosInitialState = {
-        email: '',
-        pass: '',
-      }
+      user:'',  
+      email: '',
+      pass: '',
+    }
       const { user, setUser } = useUserContext()
       const [users, setUsers] = useState([])
       const [datos, setDatos] = useState(datosInitialState)
@@ -57,6 +58,7 @@ const Registro = () => {
           localStorage.removeItem(key)
         }
       }
+      localStorage.setItem('user', datos.user)
       localStorage.setItem('email', datos.email)
       localStorage.setItem('pass', datos.pass)
       }
@@ -73,13 +75,22 @@ const Registro = () => {
       <h3 className='text-center'>Registro</h3>
       <hr />
       <div className='row justify-content-center'>
-        <div className='col-12 col-sm-8 col-md-6 col-xl-4'>
-          <form onSubmit={dataging}>
+        <section className='section registro'>
+          
+          <form onSubmit={dataging} className="form-register">
             {error && <div className='alert alert-danger'>{error}</div>}
+            <input
+              name='user'
+              type='text'
+              class='user'
+              placeholder='Usuario'
+              onChange={(e) => handleChange(e)}
+              value={datos.user}
+            />
             <input
               name='email'
               type='email'
-              className='form-control mb-2'
+              className='email'
               placeholder='Email'
               onChange={(e) => handleChange(e)}
               value={datos.email}
@@ -87,13 +98,13 @@ const Registro = () => {
             <input
               name='pass'
               type='password'
-              className='form-control mb-2'
-              placeholder='Pasword'
+              className='password'
+              placeholder='Password'
               onChange={(e) => handleChange(e)}
               value={datos.pass}
             />
             <div class="text-center pt-1">
-              <button class="btn btn-primary gradient-custom-2 mb-3" type="submit">Registrar</button>
+              <button type="submit">Registrar</button>
             </div>
             <Link to='/login'>
             <button
@@ -105,7 +116,8 @@ const Registro = () => {
             
             
           </form>
-        </div>
+          <img src="/src/assets/images/Pokedex_DPP.png" alt=""></img>
+        </section>
       </div>
     </div>
   )

@@ -60,9 +60,9 @@ const Login = () => {
     })
   }
 
-  const muestraDatos = () =>{
+  const mandaEmail = () =>{
     Swal.fire({
-      title: `Email: ${localStorage.getItem('email')} y contraseña: ${localStorage.getItem('pass')}`,
+      title: 'Se ha enviado un email para restablecer contraseña',
       timer: 2000
     })
     
@@ -78,7 +78,7 @@ const Login = () => {
             <input
               name='email'
               type='email'
-              className='form-control mb-2'
+              className='email'
               placeholder='Email'
               onChange={(e) => handleChange(e)}
               value={datos.email}
@@ -86,14 +86,13 @@ const Login = () => {
             <input
               name='pass'
               type='password'
-              className='form-control mb-2'
+              className='password'
               placeholder='Pasword'
               onChange={(e) => handleChange(e)}
               value={datos.pass}
             />
             <div class="text-center pt-1">
-              <button class="btn btn-primary gradient-custom-2 mb-3" type="submit">Log
-                in</button>
+              <button type="submit">Log in</button>
             </div>
             <Link to='/registro'>
             <button
@@ -103,7 +102,7 @@ const Login = () => {
             </button>
             </Link>
             <button
-              onClick={muestraDatos}
+              onClick={mandaEmail}
               className='btn btn-sm w-100 mb-2'
               type='button'>
               ¿Olvidaste tus datos?

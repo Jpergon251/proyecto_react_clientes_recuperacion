@@ -16,13 +16,12 @@ const Navbar = () => {
   }
 
   return (
-    <>
     <header>
-      <Link to='/inicio'>
+      <Link to='/'>
         <a class="logo" id="logo1"><img src="/src/assets/images/logo.png" alt="logo"/></a>
       </Link>
     
-      <Link to='/inicio' className='logo'>
+      <Link to='/' className='logo'>
         <a class="logo" id="logo2"><img src="/src/assets/images/logo2.png" alt="logo2"/></a>
       </Link>
       {user ? (
@@ -35,7 +34,7 @@ const Navbar = () => {
         </Link>
       )}
     </header>
-    </>
+    
   )
 }
 
