@@ -81,7 +81,7 @@ const PokemonPage = () => {
 					
 					<div className='container-stats'>
 						<div>
-						<button className={`btn btn-sm h-25 mt-4 ${active ? 'btn btn-warning' : 'btn btn-dark'}`} onClick={onClickActive}>
+						<button onClick={onClickActive}>
 						{`${active ? 'Añadido a favoritos' : 'Añadir a favoritos'}`}
 						</button>
 						</div>

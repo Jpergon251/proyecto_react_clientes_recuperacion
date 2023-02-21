@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom'
 import FilterBar from '../components/FilterBar'
 import PokemonList from '../components/PokemonList'
 import PokemonContext from '../contexts/PokemonContext'
-import ReactPaginate from 'react-paginate';
 
 const Dashboard = () => {
 
@@ -49,7 +48,7 @@ const Dashboard = () => {
 		
         <form onSubmit={onSearchSubmit}>
 			
-					<div className='form-group'>
+					<div className='form-group input-pokemon'>
 						<svg
 							xmlns='http://www.w3.org/2000/svg'
 							fill='none'
@@ -65,6 +64,7 @@ const Dashboard = () => {
 							/>
 						</svg>
 						<input
+							
 							type='search'
 							name='valueSearch'
 							id=''

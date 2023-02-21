@@ -53,6 +53,7 @@
 	}
   }
   
+  
   .blocks-item {
 	box-sizing: border-box;
 	color: #5a5a5a;
@@ -671,7 +672,9 @@
   form input:focus-visible {
 	outline: 0;
   }
-  
+  .input-pokemon{
+	height: 90px;
+  }
   form button {
 	color: #fff;
 	opacity: .8;
@@ -926,12 +929,14 @@ header .btn{
 
 /* Card List Pokemon */
 .card-list-pokemon {
+	width: 80%;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	gap: 20px;
 }
 
 .card-pokemon {
+	width: 250px;
 	cursor: pointer;
 	text-decoration: none;
 }
