@@ -28,15 +28,16 @@ const PokemonPage = () => {
 
 	const [active, setActive] = useState(false)
 	
-
-	
 	const onClickActive = ()=>{
 		if (active){
 			localStorage.removeItem(`pokemon${pokemon.id}`)
+			localStorage.removeItem(`active${pokemon.id}`);
 			return setActive(false);
 		} else {
 			localStorage.setItem(`pokemon${pokemon.id}`, JSON.stringify(pokemon))
+			localStorage.setItem(`active${pokemon.id}`,true)
 			return setActive(true)
+
 		}
 		
 	}
@@ -81,8 +82,8 @@ const PokemonPage = () => {
 					
 					<div className='container-stats'>
 						<div>
-						<button onClick={onClickActive}>
-						{`${active ? 'Añadido a favoritos' : 'Añadir a favoritos'}`}
+						<button onClick={onClickActive} >
+						{localStorage.getItem(`active${pokemon.id}`) ? 'Añadido a favoritos' : 'Añadir a favoritos'}
 						</button>
 						</div>
 						<h1>Estadísticas</h1>

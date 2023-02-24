@@ -2,10 +2,16 @@ import React, { useContext } from 'react'
 import PokemonContext from '../contexts/PokemonContext';
 
 const FilterBar = () => {
-	const { active, handleCheckbox } = useContext(PokemonContext);
+	const { active, handleCheckbox ,setActive} = useContext(PokemonContext);
 
 	return (
+		
 		<div className={`container-filters ${active ? 'active' : ''}`}>
+				<svg className='cross' onClick={() => setActive(!active)} viewBox="0 0 24 24" width="24" height="24">
+					<path fill="currentColor" d="M19.71 18.29a1 1 0 0 1-1.42 0L12 13.41l-6.29 6.3a1 1 0 0 1-1.42-1.42L10.59 12 4.3 5.71a1 1 0 0 1 1.42-1.42L12 10.59l6.29-6.3a1 1 0 1 1 1.42 1.42L13.41 12l6.3 6.29a1 1 0 0 1 0 1.42z"/>
+				</svg>
+				
+
 			<div className='filter-by-type'>
 				<span>Tipo</span>
 
