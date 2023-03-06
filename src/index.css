@@ -1255,3 +1255,7 @@ Styles of Pokemon Single Page
 	color: #000;
 }
 
+.btn-favoritos{
+	border: none;
+	background: none;
+}

@@ -82,8 +82,8 @@ const PokemonPage = () => {
 					
 					<div className='container-stats'>
 						<div>
-						<button onClick={onClickActive} >
-						{localStorage.getItem(`active${pokemon.id}`) ? 'Añadido a favoritos' : 'Añadir a favoritos'}
+						<button onClick={onClickActive} className="btn-favoritos">
+							{localStorage.getItem(`active${pokemon.id}`) ? 'En favoritos ⭐️' : 'Añadir a favoritos ☆'}
 						</button>
 						</div>
 						<h1>Estadísticas</h1>

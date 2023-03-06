@@ -73,7 +73,7 @@ const Login = () => {
       <hr />
       <div className='row justify-content-center'>
         <div className='col-12 col-sm-8 col-md-6 col-xl-4'>
-          <form onSubmit={procesarDatos}>
+          <form onSubmit={procesarDatos} className="form-register">
             {error && <div className='alert alert-danger'>{error}</div>}
             <input
               name='email'
