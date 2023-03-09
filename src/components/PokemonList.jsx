@@ -2,7 +2,6 @@ import React, { useContext, useState } from 'react'
 import PokemonContext from '../contexts/PokemonContext'
 import CardPokemon from './CardPokemon'
 import '../index.css'
-import ReactPaginate from 'react-paginate'
 
 const PokemonList = () => {
   
